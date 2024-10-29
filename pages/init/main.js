@@ -1,3 +1,6 @@
+import top from "./top/main.js"
+import body from "./body/main.js"
+
 export default function init(){
     let style = `
         {
@@ -6,6 +9,7 @@ export default function init(){
         }`
 
     const init = createElementToPage(undefined, "div", style)
-    init.innerHTML = "bem-vindo"
+    init.appendChild(top())
+    init.appendChild(body())
     return(init)
 }
